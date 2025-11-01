@@ -1,0 +1,67 @@
+====================================
+DM2025-Lab1-Exercise 虛擬環境快速指令
+====================================
+
+# 方法1: 一行命令 (推薦)
+python3 -m venv dm2025-lab1-venv && source dm2025-lab1-venv/bin/activate && pip install --upgrade pip && pip install jupyter matplotlib nltk numpy pami pandas plotly scikit-learn seaborn umap-learn wordcloud
+
+# 方法2: 分步執行
+python3 -m venv dm2025-lab1-venv
+source dm2025-lab1-venv/bin/activate
+pip install --upgrade pip
+pip install jupyter>=1.1.1 matplotlib>=3.9.4 nltk>=3.9.1 numpy>=2.0.2 pami>=2025.7.3.1 pandas>=2.3.2 plotly>=6.3.0 scikit-learn>=1.6.1 seaborn>=0.13.2 umap-learn>=0.5.9.post2 wordcloud>=1.9.3
+
+# 方法3: 使用自動化腳本
+chmod +x setup_venv_robust.sh
+./setup_venv_robust.sh
+
+====================================
+日常使用指令
+====================================
+
+# 啟動虛擬環境
+source dm2025-lab1-venv/bin/activate
+
+# 關閉虛擬環境
+deactivate
+
+# 運行 Jupyter
+source dm2025-lab1-venv/bin/activate && jupyter notebook
+
+# 運行主程式
+source dm2025-lab1-venv/bin/activate && python main.py
+
+# 查看已安裝套件
+pip list
+
+# 重新創建環境 (如果需要)
+rm -rf dm2025-lab1-venv
+
+====================================
+Windows 用戶
+====================================
+
+# 創建虛擬環境
+python -m venv dm2025-lab1-venv
+
+# 啟動虛擬環境
+dm2025-lab1-venv\Scripts\activate
+
+# 安裝套件
+pip install jupyter matplotlib nltk numpy pami pandas plotly scikit-learn seaborn umap-learn wordcloud
+
+====================================
+網路問題解決方案
+====================================
+
+# 使用國內鏡像 (中國用戶)
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ jupyter matplotlib nltk numpy pami pandas plotly scikit-learn seaborn umap-learn wordcloud
+
+# 增加超時時間
+pip install --timeout 300 jupyter matplotlib nltk numpy pami pandas plotly scikit-learn seaborn umap-learn wordcloud
+
+# 使用系統 Python 包 (Ubuntu/Debian)
+sudo apt update
+sudo apt install python3-jupyter python3-matplotlib python3-nltk python3-numpy python3-pandas python3-plotly python3-sklearn python3-seaborn
+
+====================================

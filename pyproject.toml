@@ -3,7 +3,7 @@ name = "dm2025-lab1-exercise"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.9,<3.12"
+requires-python = ">=3.9,<3.13"
 dependencies = [
     "jupyter>=1.1.1",
     "matplotlib>=3.9.4",
@@ -15,4 +15,13 @@ dependencies = [
     "scikit-learn>=1.6.1",
     "seaborn>=0.13.2",
     "umap-learn>=0.5.9.post2",
+    "wordcloud>=1.9.3",
 ]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["helpers*"]
+exclude = ["img*", "newdataset*"]
